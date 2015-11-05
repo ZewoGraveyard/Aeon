@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Aeon Command Line Application.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>Aeon.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -18,6 +23,11 @@
 			<true/>
 		</dict>
 		<key>B0D521791BE4F753002063D5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0D521BE1BE53AD7002063D5</key>
 		<dict>
 			<key>primary</key>
 			<true/>

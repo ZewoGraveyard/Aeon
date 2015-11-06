@@ -378,11 +378,11 @@
 			isa = PBXGroup;
 			children = (
 				B0D521731BE4F753002063D5 /* Aeon.h */,
+				B0D521751BE4F753002063D5 /* Info.plist */,
 				B0A54BEB1BE6D7C700423092 /* HTTPParser.swift */,
 				B0A54BF11BE6DB8300423092 /* HTTPRequest+KeepAliveType.swift */,
 				B0A54BEE1BE6D7EA00423092 /* HTTPSerializer.swift */,
 				B0D5218C1BE4F7E7002063D5 /* HTTPServer.swift */,
-				B0D521751BE4F753002063D5 /* Info.plist */,
 				B0A54BE21BE6D72700423092 /* TCPServer.swift */,
 				B0A54BDF1BE6D6E100423092 /* TCPStream.swift */,
 			);

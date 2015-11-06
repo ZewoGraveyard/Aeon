@@ -41,8 +41,11 @@ final class TCPStream : StreamType {
 
     func receive(completion: Result<[Int8]> -> Void) {
         channel.read { result in
-            result.success { _, data in
+            result.success { done, data in
                 completion(Result(data))
+            }
+            result.failure { error in
+                completion(Result(error))
             }
         }
     }

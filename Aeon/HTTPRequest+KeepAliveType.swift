@@ -27,3 +27,14 @@ extension HTTPRequest : KeepAliveType {
         return keepAlive
     }
 }
+
+extension HTTPResponse {
+    public init(statusCode: Int, reasonPhrase: String, headers: [String: String], body: [Int8]) {
+        self.statusCode = statusCode
+        self.reasonPhrase = reasonPhrase
+        self.majorVersion = 1
+        self.minorVersion = 1
+        self.headers = headers
+        self.body = body
+    }
+}

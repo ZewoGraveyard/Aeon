@@ -1,4 +1,4 @@
-// HTTPServer.swift
+// ResponderType.swift
 //
 // The MIT License (MIT)
 //
@@ -22,35 +22,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-struct HTTPServerResponder : ResponderType {
-    private let respondRequest: (request: HTTPRequest, completion: HTTPResponse -> Void) -> Void
+protocol ResponderType {
+    typealias Request
+    typealias Response
     
-    func respond(request: HTTPRequest, completion: HTTPResponse -> Void) {
-        respondRequest(request: request, completion: completion)
-    }
-}
-
-public struct HTTPServer {
-    let server: RequestResponseServer<HTTPParser, HTTPServerResponder, HTTPSerializer>
-
-    public init(port: Int, respond: (request: HTTPRequest, completion: HTTPResponse -> Void) -> Void) {
-        self.server = RequestResponseServer(
-            server: TCPServer(port: port),
-            parser: HTTPParser(),
-            responder: HTTPServerResponder(respondRequest: respond),
-            serializer: HTTPSerializer()
-        )
-    }
-
-    public func start(failure: ErrorType -> Void = HTTPServer.defaultFailureHandler) {
-        server.start(failure: failure)
-    }
-    
-    public func stop() {
-        server.stop()
-    }
-
-    private static func defaultFailureHandler(error: ErrorType) -> Void {
-        print("Error: \(error)")
-    }
+    func respond(request: Request, completion: Response -> Void)
 }

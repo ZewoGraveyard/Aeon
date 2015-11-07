@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3A1C55881BECE19A006EC3F7"
-               BuildableName = "Aeon iOS.framework"
+               BuildableName = "Aeon.framework"
                BlueprintName = "Aeon iOS"
                ReferencedContainer = "container:Aeon.xcodeproj">
             </BuildableReference>
@@ -44,7 +44,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A1C55881BECE19A006EC3F7"
-            BuildableName = "Aeon iOS.framework"
+            BuildableName = "Aeon.framework"
             BlueprintName = "Aeon iOS"
             ReferencedContainer = "container:Aeon.xcodeproj">
          </BuildableReference>
@@ -66,7 +66,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A1C55881BECE19A006EC3F7"
-            BuildableName = "Aeon iOS.framework"
+            BuildableName = "Aeon.framework"
             BlueprintName = "Aeon iOS"
             ReferencedContainer = "container:Aeon.xcodeproj">
          </BuildableReference>
@@ -84,7 +84,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3A1C55881BECE19A006EC3F7"
-            BuildableName = "Aeon iOS.framework"
+            BuildableName = "Aeon.framework"
             BlueprintName = "Aeon iOS"
             ReferencedContainer = "container:Aeon.xcodeproj">
          </BuildableReference>

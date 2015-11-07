@@ -23,10 +23,10 @@
 // SOFTWARE.
 
 struct RequestResponseServer<Parser: RequestParserType, Responder: ResponderType, Serializer: ResponseSerializerType where Parser.Request == Responder.Request, Serializer.Response == Responder.Response> {
-    var server: ServerType
-    var parser: Parser
-    var responder: Responder
-    var serializer: Serializer
+    let server: ServerType
+    let parser: Parser
+    let responder: Responder
+    let serializer: Serializer
     
     func start(failure failure: ErrorType -> Void) {
         server.acceptClient { acceptResult in

@@ -22,7 +22,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-public enum Result<T> {
+enum Result<T> {
     case Success(T)
     case Failure(ErrorType)
 

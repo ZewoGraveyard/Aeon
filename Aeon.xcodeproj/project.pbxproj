@@ -856,7 +856,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Aeon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zewo.Aeon;
 				PRODUCT_NAME = Aeon;
@@ -876,7 +876,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Aeon/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zewo.Aeon;
 				PRODUCT_NAME = Aeon;
@@ -1099,6 +1099,7 @@
 				3A1C559C1BECE19B006EC3F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A1C559D1BECE19B006EC3F7 /* Build configuration list for PBXNativeTarget "Aeon iOS Tests" */ = {
 			isa = XCConfigurationList;
@@ -1107,6 +1108,7 @@
 				3A1C559F1BECE19B006EC3F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B0D5216A1BE4F753002063D5 /* Build configuration list for PBXProject "Aeon" */ = {
 			isa = XCConfigurationList;

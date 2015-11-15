@@ -22,7 +22,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-struct HTTPParser : RequestParserType {
+struct HTTPParser : HTTPRequestParserType {
     func parseRequest(client: StreamType, completion: Result<HTTPRequest> -> Void) {
         let parser = HTTPRequestParser { request in
             completion(Result(request))

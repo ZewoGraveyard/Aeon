@@ -22,7 +22,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-struct HTTPSerializer : ResponseSerializerType {
+struct HTTPSerializer : HTTPResponseSerializerType {
     func serializeResponse(client: StreamType, response: HTTPResponse, completion: Result<Void> -> Void) {
         var string = "HTTP/\(response.majorVersion).\(response.minorVersion) \(response.statusCode) \(response.reasonPhrase)\r\n"
 

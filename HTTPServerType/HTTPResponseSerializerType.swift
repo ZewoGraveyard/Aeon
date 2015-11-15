@@ -1,4 +1,4 @@
-// StreamType.swift
+// ResponseSerializerType.swift
 //
 // The MIT License (MIT)
 //
@@ -22,8 +22,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-protocol StreamType {
-    func close()
-    func receive(completion: Result<[Int8]> -> Void)
-    func send(buffer: [Int8], completion: Result<Void> -> Void)
+public protocol HTTPResponseSerializerType {
+    func serializeResponse(client: StreamType, response: HTTPResponse, completion: Result<Void> -> Void)
 }

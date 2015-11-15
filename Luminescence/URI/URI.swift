@@ -37,7 +37,6 @@ public struct URI {
     public let path: String?
     public let query: [String: String]
     public let fragment: String?
-
 }
 
 extension URI {

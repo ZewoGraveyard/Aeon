@@ -22,7 +22,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-struct HTTPServerResponder : HTTPResponder {
+struct HTTPServerResponder : HTTPResponderType {
     func respond(request: HTTPRequest, completion: HTTPResponse -> Void) {
         completion(
             HTTPResponse(

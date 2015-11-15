@@ -30,4 +30,14 @@ public struct HTTPRequest {
     public let headers: [String: String]
     public let body: [Int8]
     public let keepAlive: Bool
+
+    public init(method: HTTPMethod, uri: URI, majorVersion: Int = 1, minorVersion: Int = 1, headers: [String: String] = [:], body: [Int8] = [], keepAlive: Bool = false) {
+        self.method = method
+        self.uri = uri
+        self.majorVersion = majorVersion
+        self.minorVersion = minorVersion
+        self.headers = headers
+        self.body = body
+        self.keepAlive = keepAlive
+    }
 }

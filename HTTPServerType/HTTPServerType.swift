@@ -1,4 +1,4 @@
-// RequestResponseServer.swift
+// HTTPServerType.swift
 //
 // The MIT License (MIT)
 //
@@ -22,13 +22,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-struct RequestResponseServer<Parser: RequestParserType, Responder: ResponderType, Serializer: ResponseSerializerType where Parser.Request == Responder.Request, Serializer.Response == Responder.Response> {
-    let server: ServerType
-    let parser: Parser
-    let responder: Responder
-    let serializer: Serializer
-    
-    func start(failure failure: ErrorType -> Void) {
+public protocol HTTPServerType {
+    var server: ServerType { get }
+    var parser: HTTPRequestParserType { get }
+    var responder: HTTPResponderType { get }
+    var serializer: HTTPResponseSerializerType { get }
+}
+
+extension HTTPServerType {
+    public func start(failure failure: ErrorType -> Void = Self.defaultFailureHandler) {
         server.acceptClient { acceptResult in
             acceptResult.success { client in
                 self.parser.parseRequest(client) { parseResult in
@@ -57,11 +59,15 @@ struct RequestResponseServer<Parser: RequestParserType, Responder: ResponderType
         }
     }
 
-    func stop() {
+    public func stop() {
         server.stop()
     }
     
-    private func keepAlive(request: Responder.Request) -> Bool {
-        return (request as? KeepAliveType)?.shouldKeepAlive ?? false
+    private func keepAlive(request: HTTPRequest) -> Bool {
+        return request.keepAlive
+    }
+
+    private static func defaultFailureHandler(error: ErrorType) -> Void {
+        print("Error: \(error)")
     }
 }

@@ -1,4 +1,4 @@
-// KeepAliveType.swift
+// ServerType.swift
 //
 // The MIT License (MIT)
 //
@@ -22,6 +22,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-protocol KeepAliveType {
-    var shouldKeepAlive: Bool { get }
+public protocol ServerType {
+    func acceptClient(completion: Result<StreamType> -> Void)
+    func stop()
 }

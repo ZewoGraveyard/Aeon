@@ -12,7 +12,11 @@ Pod::Spec.new do |s|
 
   s.source_files = 'Dependencies/Belle/*.c',
                    'Dependencies/Incandescence/*.c',
-                   'Dependencies/Tide/*.c'
+                   'Dependencies/Tide/*.c',
+                   'Currents/**/*.swift',
+                   'Kalopsia/**/*.swift',
+                   'Luminescence/**/*.swift',
+                   'RequestResponseServer/**/*.swift',
                    'Aeon/**/*.swift'
 
   s.xcconfig =  {

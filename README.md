@@ -25,7 +25,7 @@ Aeon
 ## Usage
 
 ```swift
-struct HTTPServerResponder : HTTPResponder {
+struct HTTPServerResponder : HTTPResponderType {
     func respond(request: HTTPRequest, completion: HTTPResponse -> Void) {
         
         // do something based on the HTTPRequest

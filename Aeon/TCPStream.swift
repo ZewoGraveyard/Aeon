@@ -39,26 +39,26 @@ final class TCPStream : StreamType {
         channel.setLowWater(1)
     }
 
-    func receive(completion: Result<[Int8]> -> Void) {
+    func receive(completion: (data: [Int8], error: ErrorType?) -> Void) {
         channel.read { result in
             result.success { done, data in
-                completion(Result(data))
+                completion(data: data, error: nil)
             }
             result.failure { error in
-                completion(Result(error))
+                completion(data: [], error: error)
             }
         }
     }
 
-    func send(data: [Int8], completion: Result<Void> -> Void) {
+    func send(data: [Int8], completion: (error: ErrorType?) -> Void) {
         channel.write(data: data) { result in
             result.success { done, _ in
                 if done {
-                    completion(Result())
+                    completion(error: nil)
                 }
             }
             result.failure { error in
-                completion(Result(error))
+                completion(error: error)
             }
         }
     }

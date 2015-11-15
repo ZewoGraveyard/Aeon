@@ -23,5 +23,5 @@
 // SOFTWARE.
 
 public protocol HTTPRequestParserType {
-    func parseRequest(client: StreamType, completion: Result<HTTPRequest> -> Void)
+    func parseRequest(client: StreamType, completion: (request: HTTPRequest?, error: ErrorType?) -> Void)
 }

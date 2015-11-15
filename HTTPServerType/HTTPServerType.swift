@@ -31,31 +31,30 @@ public protocol HTTPServerType {
 
 extension HTTPServerType {
     public func start(failure failure: ErrorType -> Void = Self.defaultFailureHandler) {
-        server.acceptClient { acceptResult in
-            acceptResult.success { client in
-                self.parser.parseRequest(client) { parseResult in
-                    parseResult.success { request in
+        server.acceptClient { client, error in
+            if let error = error {
+                failure(error)
+            } else if let client = client {
+                self.parser.parseRequest(client) { request, error in
+                    if let error = error {
+                        failure(error)
+                        client.close()
+                    } else if let request = request {
                         self.responder.respond(request) { response in
-                            self.serializer.serializeResponse(client, response: response) { serializeResult in
-                                serializeResult.success {
+                            self.serializer.serializeResponse(client, response: response) { error in
+                                if let error = error {
+                                    failure(error)
+                                    client.close()
+                                } else {
                                     if !self.keepAlive(request) {
                                         client.close()
                                     }
                                 }
-                                serializeResult.failure { error in
-                                    failure(error)
-                                    client.close()
-                                }
                             }
                         }
                     }
-                    parseResult.failure { error in
-                        failure(error)
-                        client.close()
-                    }
                 }
             }
-            acceptResult.failure(failure)
         }
     }
 

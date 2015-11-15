@@ -23,21 +23,20 @@
 // SOFTWARE.
 
 struct HTTPParser : HTTPRequestParserType {
-    func parseRequest(client: StreamType, completion: Result<HTTPRequest> -> Void) {
+    func parseRequest(client: StreamType, completion: (request: HTTPRequest?, error: ErrorType?) -> Void) {
         let parser = HTTPRequestParser { request in
-            completion(Result(request))
+            completion(request: request, error: nil)
         }
 
-        client.receive { result in
-            result.success { data in
+        client.receive { data, error in
+            if let error = error {
+                completion(request: nil, error: error)
+            } else {
                 do {
                     try parser.parse(data)
                 } catch {
-                    completion(Result(error))
+                    completion(request: nil, error: error)
                 }
-            }
-            result.failure { error in
-                completion(Result(error))
             }
         }
     }

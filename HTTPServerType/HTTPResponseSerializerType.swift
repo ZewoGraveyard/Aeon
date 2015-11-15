@@ -23,5 +23,5 @@
 // SOFTWARE.
 
 public protocol HTTPResponseSerializerType {
-    func serializeResponse(client: StreamType, response: HTTPResponse, completion: Result<Void> -> Void)
+    func serializeResponse(client: StreamType, response: HTTPResponse, completion: (error: ErrorType?) -> Void)
 }

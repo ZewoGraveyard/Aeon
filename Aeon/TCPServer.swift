@@ -26,7 +26,7 @@ struct TCPServer : ServerType {
     let port: Int
     let semaphore = Semaphore(resourceCount: 0)
 
-    func acceptClient(completion: Result<StreamType> -> Void) {
+    func acceptClient(completion: (stream: StreamType?, error: ErrorType?) -> Void) {
         do {
             let ip = try IP(port: port)
             let socket = try TCPServerSocket(ip: ip, backlog: 128)
@@ -39,9 +39,9 @@ struct TCPServer : ServerType {
                         let clientSocket = try socket.accept()
                         errorCount = 0
                         let socketStream = TCPStream(socket: clientSocket)
-                        completion(Result(socketStream))
+                        completion(stream: socketStream, error: nil)
                     } catch {
-                        completion(Result(error))
+                        completion(stream: nil, error: error)
                         ++errorCount
                         if errorCount == maxErrors {
                             self.stop()
@@ -53,7 +53,7 @@ struct TCPServer : ServerType {
             
             semaphore.wait()
         } catch {
-            completion(Result(error))
+            completion(stream: nil, error: error)
         }
     }
 

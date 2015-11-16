@@ -1,4 +1,4 @@
-// RequestParserType.swift
+// HTTPRequestParserType.swift
 //
 // The MIT License (MIT)
 //
@@ -23,5 +23,5 @@
 // SOFTWARE.
 
 public protocol HTTPRequestParserType {
-    func parseRequest(client: StreamType, completion: (request: HTTPRequest?, error: ErrorType?) -> Void)
+    func parseRequest(client: TCPStreamType, completion: (request: HTTPRequest?, error: ErrorType?) -> Void)
 }

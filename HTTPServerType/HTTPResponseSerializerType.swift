@@ -1,4 +1,4 @@
-// ResponseSerializerType.swift
+// HTTPResponseSerializerType.swift
 //
 // The MIT License (MIT)
 //
@@ -23,5 +23,5 @@
 // SOFTWARE.
 
 public protocol HTTPResponseSerializerType {
-    func serializeResponse(client: StreamType, response: HTTPResponse, completion: (error: ErrorType?) -> Void)
+    func serializeResponse(client: TCPStreamType, response: HTTPResponse, completion: (error: ErrorType?) -> Void)
 }

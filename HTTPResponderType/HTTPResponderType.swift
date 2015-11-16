@@ -1,4 +1,4 @@
-// TCPStreamType.swift
+// HTTPResponderType.swift
 //
 // The MIT License (MIT)
 //
@@ -22,8 +22,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-public protocol TCPStreamType {
-    func close()
-    func receive(completion: (data: [Int8], error: ErrorType?) -> Void)
-    func send(data: [Int8], completion: (error: ErrorType?) -> Void)
+public protocol HTTPResponderType {
+    func respond(request: HTTPRequest, completion: HTTPResponse -> Void)
 }

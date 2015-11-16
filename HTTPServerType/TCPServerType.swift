@@ -22,7 +22,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-public protocol ServerType {
-    func acceptClient(completion: (stream: StreamType?, error: ErrorType?) -> Void)
+public protocol TCPServerType {
+    func acceptClient(completion: (stream: TCPStreamType?, error: ErrorType?) -> Void)
     func stop()
 }

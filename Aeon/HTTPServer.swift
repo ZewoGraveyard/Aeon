@@ -23,7 +23,7 @@
 // SOFTWARE.
 
 public struct HTTPServer : HTTPServerType {
-    public let server: ServerType
+    public let server: TCPServerType
     public let parser: HTTPRequestParserType = HTTPParser()
     public let responder: HTTPResponderType
     public let serializer: HTTPResponseSerializerType = HTTPSerializer()

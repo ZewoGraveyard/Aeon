@@ -26,19 +26,5 @@ import XCTest
 import Aeon
 
 class AeonTests: XCTestCase {
-    func testExample() {
-        func respond(request: HTTPRequest, completion: HTTPResponse -> Void) {
-            completion(
-                HTTPResponse(
-                    statusCode: 200,
-                    reasonPhrase: "OK",
-                    headers: [:],
-                    body: []
-                )
-            )
-        }
-        
-        let server = HTTPServer(port: 8080, respond: respond)
-        server.start()
-    }
+    func testExample() {}
 }

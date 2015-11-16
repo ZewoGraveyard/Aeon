@@ -22,11 +22,11 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-struct TCPServer : ServerType {
+struct TCPServer : TCPServerType {
     let port: Int
     let semaphore = Semaphore(resourceCount: 0)
 
-    func acceptClient(completion: (stream: StreamType?, error: ErrorType?) -> Void) {
+    func acceptClient(completion: (stream: TCPStreamType?, error: ErrorType?) -> Void) {
         do {
             let ip = try IP(port: port)
             let socket = try TCPServerSocket(ip: ip, backlog: 128)

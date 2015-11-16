@@ -1,4 +1,4 @@
-// ResponderType.swift
+// URI.swift
 //
 // The MIT License (MIT)
 //
@@ -22,6 +22,17 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-public protocol HTTPResponderType {
-    func respond(request: HTTPRequest, completion: HTTPResponse -> Void)
+public struct URI {
+    public struct UserInfo {
+        public let username: String
+        public let password: String
+    }
+
+    public let scheme: String?
+    public let userInfo: UserInfo?
+    public let host: String?
+    public let port: Int?
+    public let path: String?
+    public let query: [String : String]
+    public let fragment: String?
 }

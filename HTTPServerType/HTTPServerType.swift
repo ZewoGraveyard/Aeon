@@ -23,10 +23,10 @@
 // SOFTWARE.
 
 public protocol HTTPServerType {
-    var server: ServerType { get }
+    var server: TCPServerType { get }
     var parser: HTTPRequestParserType { get }
     var responder: HTTPResponderType { get }
-    var serializer: HTTPResponseSerializerType { get }
+    var serializer: HTTPResponseSerializerType  { get }
 }
 
 extension HTTPServerType {
@@ -46,7 +46,7 @@ extension HTTPServerType {
                                     failure(error)
                                     client.close()
                                 } else {
-                                    if !self.keepAlive(request) {
+                                    if !request.keepAlive {
                                         client.close()
                                     }
                                 }
@@ -60,10 +60,6 @@ extension HTTPServerType {
 
     public func stop() {
         server.stop()
-    }
-    
-    private func keepAlive(request: HTTPRequest) -> Bool {
-        return request.keepAlive
     }
 
     private static func defaultFailureHandler(error: ErrorType) -> Void {

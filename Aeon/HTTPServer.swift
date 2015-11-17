@@ -28,6 +28,18 @@ public struct HTTPServer : HTTPServerType {
     public let responder: HTTPResponderType
     public let serializer: HTTPResponseSerializerType = HTTPSerializer()
 
+    struct HTTPResponder : HTTPResponderType {
+        let respond: (request: HTTPRequest) -> HTTPResponse
+        func respond(request: HTTPRequest) -> HTTPResponse {
+            return respond(request: request)
+        }
+    }
+
+    public init(port: Int, respond: HTTPRequest -> HTTPResponse) {
+        self.server = TCPServer(port: port)
+        self.responder = HTTPResponder(respond: respond)
+    }
+
     public init(port: Int, responder: HTTPResponderType) {
         self.server = TCPServer(port: port)
         self.responder = responder

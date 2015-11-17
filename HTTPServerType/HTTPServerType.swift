@@ -40,15 +40,14 @@ extension HTTPServerType {
                         failure(error)
                         client.close()
                     } else if let request = request {
-                        self.responder.respond(request) { response in
-                            self.serializer.serializeResponse(client, response: response) { error in
-                                if let error = error {
-                                    failure(error)
+                        let response = self.responder.respond(request)
+                        self.serializer.serializeResponse(client, response: response) { error in
+                            if let error = error {
+                                failure(error)
+                                client.close()
+                            } else {
+                                if !request.keepAlive {
                                     client.close()
-                                } else {
-                                    if !request.keepAlive {
-                                        client.close()
-                                    }
                                 }
                             }
                         }

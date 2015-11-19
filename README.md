@@ -30,7 +30,7 @@ struct HTTPServerResponder : HTTPResponderType {
     
         // do something based on the HTTPRequest
 
-        return HTTPResponse(statusCode: 200, reasonPhrase: "OK")
+        return HTTPResponse(status: .OK)
     }
 }
 

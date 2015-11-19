@@ -32,7 +32,7 @@ final class TCPStream : TCPStreamType {
     init(socket: TCPClientSocket) {
         self.socket = socket
 
-        channel = IOChannel(type: IOChannelType.Stream, fileDescriptor: socket.fileDescriptor) { result in
+        channel = IOChannel(type: .Stream, fileDescriptor: socket.fileDescriptor) { result in
             result.failure { error in
                 print(error)
             }

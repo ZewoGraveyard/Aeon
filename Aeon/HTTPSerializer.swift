@@ -24,8 +24,8 @@
 
 import Curvature
 
-public struct HTTPSerializer : HTTPResponseSerializerType {
-    public func serializeResponse(client: TCPStreamType, response: HTTPResponse, completion: (error: ErrorType?) -> Void) {
+struct HTTPSerializer : HTTPResponseSerializerType {
+    func serializeResponse(client: TCPStreamType, response: HTTPResponse, completion: (error: ErrorType?) -> Void) {
         var string = "HTTP/\(response.majorVersion).\(response.minorVersion) \(response.statusCode) \(response.reasonPhrase)\r\n"
 
         for (name, value) in response.headers {

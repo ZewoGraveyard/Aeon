@@ -375,8 +375,8 @@
 			isa = PBXGroup;
 			children = (
 				B08FC5651BFE70E3005A1705 /* Currents.framework */,
-				B08FC5671BFE70E3005A1705 /* Currents OSX Tests.xctest */,
 				B08FC5691BFE70E3005A1705 /* Currents.framework */,
+				B08FC5671BFE70E3005A1705 /* Currents OSX Tests.xctest */,
 				B08FC56B1BFE70E3005A1705 /* Currents iOS Tests.xctest */,
 			);
 			name = Products;
@@ -397,8 +397,8 @@
 			isa = PBXGroup;
 			children = (
 				B08FC5831BFE70ED005A1705 /* Kalopsia.framework */,
-				B08FC5851BFE70ED005A1705 /* KalopsiaTests.xctest */,
 				B08FC5871BFE70ED005A1705 /* Kalopsia.framework */,
+				B08FC5851BFE70ED005A1705 /* KalopsiaTests.xctest */,
 				B08FC5891BFE70ED005A1705 /* KalopsiaTests.xctest */,
 			);
 			name = Products;
@@ -409,9 +409,9 @@
 			children = (
 				B08FC5941BFE70F3005A1705 /* Luminescence.framework */,
 				B08FC5961BFE70F3005A1705 /* Luminescence.framework */,
-				B08FC5981BFE70F3005A1705 /* HTTPParser OSX Tests.xctest */,
+				B08FC5981BFE70F3005A1705 /* LuminescenceTests.xctest */,
 				B08FC59A1BFE70F3005A1705 /* LuminescenceTests.xctest */,
-				B08FC59C1BFE70F3005A1705 /* HTTPParser Command Line */,
+				B08FC59C1BFE70F3005A1705 /* Luminescence */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -766,10 +766,9 @@
 			remoteRef = B08FC5951BFE70F3005A1705 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B08FC5981BFE70F3005A1705 /* HTTPParser OSX Tests.xctest */ = {
+		B08FC5981BFE70F3005A1705 /* LuminescenceTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
-			name = "HTTPParser OSX Tests.xctest";
 			path = LuminescenceTests.xctest;
 			remoteRef = B08FC5971BFE70F3005A1705 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -781,10 +780,9 @@
 			remoteRef = B08FC5991BFE70F3005A1705 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		B08FC59C1BFE70F3005A1705 /* HTTPParser Command Line */ = {
+		B08FC59C1BFE70F3005A1705 /* Luminescence */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
-			name = "HTTPParser Command Line";
 			path = Luminescence;
 			remoteRef = B08FC59B1BFE70F3005A1705 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -978,6 +976,7 @@
 		3A1C559B1BECE19B006EC3F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -998,6 +997,7 @@
 		3A1C559C1BECE19B006EC3F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1135,6 +1135,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1157,6 +1158,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;

@@ -22,6 +22,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+import Kalopsia
+import Currents
+
 struct TCPServer : TCPServerType {
     let port: Int
     let semaphore = Semaphore(resourceCount: 0)

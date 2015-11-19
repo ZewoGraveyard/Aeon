@@ -1,4 +1,4 @@
-// HTTPParser.swift
+// TCPStreamType.swift
 //
 // The MIT License (MIT)
 //
@@ -22,25 +22,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Curvature
-import Luminescence
-
-public struct HTTPParser : HTTPRequestParserType {
-    public func parseRequest(client: TCPStreamType, completion: (request: HTTPRequest?, error: ErrorType?) -> Void) {
-        let parser = HTTPRequestParser { request in
-            completion(request: request, error: nil)
-        }
-
-        client.receive { data, error in
-            if let error = error {
-                completion(request: nil, error: error)
-            } else {
-                do {
-                    try parser.parse(data)
-                } catch {
-                    completion(request: nil, error: error)
-                }
-            }
-        }
-    }
+public protocol TCPStreamType {
+    func close()
+    func receive(completion: (data: [Int8], error: ErrorType?) -> Void)
+    func send(data: [Int8], completion: (error: ErrorType?) -> Void)
 }

@@ -22,6 +22,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+import Kalopsia
+import Currents
+
 final class TCPStream : TCPStreamType {
     let socket: TCPClientSocket
     let channel: IOChannel
@@ -29,7 +32,7 @@ final class TCPStream : TCPStreamType {
     init(socket: TCPClientSocket) {
         self.socket = socket
 
-        channel = IOChannel(type: .Stream, fileDescriptor: socket.fileDescriptor) { result in
+        channel = IOChannel(type: IOChannelType.Stream, fileDescriptor: socket.fileDescriptor) { result in
             result.failure { error in
                 print(error)
             }

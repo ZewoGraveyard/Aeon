@@ -1,0 +1,58 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "8F96187C21DCA91FDCD88D25D8AF3DBCE89E0BCF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "57932305D7AF3390B1D4C8A3D4D1FCFFE771843F" : 0,
+    "45B7FEFFE2FB16A849776CE96605306C4D07DBEF" : 0,
+    "7926375CF48B2FF472FD622211E467ACFF61BE5A" : 0,
+    "8F96187C21DCA91FDCD88D25D8AF3DBCE89E0BCF" : 0,
+    "ED0FE0EECA7970ABC2D434BB3DA7278322E3B02F" : 0,
+    "D4199CF4A45E212E54A4CEE7E34326E0BC446862" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "27589DA4-6D84-4D61-BF7A-B9C142F226F5",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "57932305D7AF3390B1D4C8A3D4D1FCFFE771843F" : "Aeon\/Carthage\/Checkouts\/Luminescence\/",
+    "45B7FEFFE2FB16A849776CE96605306C4D07DBEF" : "Aeon\/Carthage\/Checkouts\/Kalopsia\/",
+    "7926375CF48B2FF472FD622211E467ACFF61BE5A" : "Aeon\/Carthage\/Checkouts\/Otherside\/",
+    "8F96187C21DCA91FDCD88D25D8AF3DBCE89E0BCF" : "Aeon\/",
+    "ED0FE0EECA7970ABC2D434BB3DA7278322E3B02F" : "Aeon\/Carthage\/Checkouts\/Currents\/",
+    "D4199CF4A45E212E54A4CEE7E34326E0BC446862" : "Aeon\/Carthage\/Checkouts\/Curvature\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Aeon",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Aeon.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Zewo\/Kalopsia.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "45B7FEFFE2FB16A849776CE96605306C4D07DBEF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Zewo\/Luminescence.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "57932305D7AF3390B1D4C8A3D4D1FCFFE771843F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Zewo\/Otherside.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7926375CF48B2FF472FD622211E467ACFF61BE5A"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Zewo\/Aeon.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8F96187C21DCA91FDCD88D25D8AF3DBCE89E0BCF"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Zewo\/Curvature.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D4199CF4A45E212E54A4CEE7E34326E0BC446862"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Zewo\/Currents.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ED0FE0EECA7970ABC2D434BB3DA7278322E3B02F"
+    }
+  ]
+}

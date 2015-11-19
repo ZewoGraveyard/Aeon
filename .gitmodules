@@ -1,0 +1,15 @@
+[submodule "Carthage/Checkouts/Luminescence"]
+	path = Carthage/Checkouts/Luminescence
+	url = https://github.com/Zewo/Luminescence.git
+[submodule "Carthage/Checkouts/Curvature"]
+	path = Carthage/Checkouts/Curvature
+	url = https://github.com/Zewo/Curvature.git
+[submodule "Carthage/Checkouts/Otherside"]
+	path = Carthage/Checkouts/Otherside
+	url = https://github.com/Zewo/Otherside.git
+[submodule "Carthage/Checkouts/Currents"]
+	path = Carthage/Checkouts/Currents
+	url = https://github.com/Zewo/Currents.git
+[submodule "Carthage/Checkouts/Kalopsia"]
+	path = Carthage/Checkouts/Kalopsia
+	url = https://github.com/Zewo/Kalopsia.git

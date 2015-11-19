@@ -1,4 +1,4 @@
-// HTTPParser.swift
+// HTTPRequestParserType.swift
 //
 // The MIT License (MIT)
 //
@@ -23,24 +23,7 @@
 // SOFTWARE.
 
 import Curvature
-import Luminescence
 
-public struct HTTPParser : HTTPRequestParserType {
-    public func parseRequest(client: TCPStreamType, completion: (request: HTTPRequest?, error: ErrorType?) -> Void) {
-        let parser = HTTPRequestParser { request in
-            completion(request: request, error: nil)
-        }
-
-        client.receive { data, error in
-            if let error = error {
-                completion(request: nil, error: error)
-            } else {
-                do {
-                    try parser.parse(data)
-                } catch {
-                    completion(request: nil, error: error)
-                }
-            }
-        }
-    }
+public protocol HTTPRequestParserType {
+    func parseRequest(client: TCPStreamType, completion: (request: HTTPRequest?, error: ErrorType?) -> Void)
 }

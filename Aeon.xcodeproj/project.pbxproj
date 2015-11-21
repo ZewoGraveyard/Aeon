@@ -32,7 +32,6 @@
 		B0D521741BE4F753002063D5 /* Aeon.h in Headers */ = {isa = PBXBuildFile; fileRef = B0D521731BE4F753002063D5 /* Aeon.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0D5217B1BE4F753002063D5 /* Aeon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0D521701BE4F753002063D5 /* Aeon.framework */; };
 		B0D5218D1BE4F7E7002063D5 /* HTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D5218C1BE4F7E7002063D5 /* HTTPServer.swift */; };
-		B0D521C21BE53AD7002063D5 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D521C11BE53AD7002063D5 /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -269,18 +268,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		B0D521BD1BE53AD7002063D5 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		3A1C55891BECE19A006EC3F7 /* Aeon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Aeon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A1C55921BECE19A006EC3F7 /* Aeon iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aeon iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,8 +292,6 @@
 		B0D521751BE4F753002063D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0D5217A1BE4F753002063D5 /* Aeon OSX Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Aeon OSX Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0D5218C1BE4F7E7002063D5 /* HTTPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPServer.swift; sourceTree = "<group>"; };
-		B0D521BF1BE53AD7002063D5 /* Aeon Command Line Application */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Aeon Command Line Application"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0D521C11BE53AD7002063D5 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,13 +322,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0D5217B1BE4F753002063D5 /* Aeon.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B0D521BC1BE53AD7002063D5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,7 +416,6 @@
 				B08FC54D1BFE70D0005A1705 /* HTTPServerType */,
 				B0D521721BE4F753002063D5 /* Aeon */,
 				3A1C55A11BECE2DC006EC3F7 /* Aeon Tests */,
-				B0D521C01BE53AD7002063D5 /* Aeon Command Line Application */,
 				B0D521711BE4F753002063D5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -448,7 +425,6 @@
 			children = (
 				B0D521701BE4F753002063D5 /* Aeon.framework */,
 				B0D5217A1BE4F753002063D5 /* Aeon OSX Tests.xctest */,
-				B0D521BF1BE53AD7002063D5 /* Aeon Command Line Application */,
 				3A1C55891BECE19A006EC3F7 /* Aeon.framework */,
 				3A1C55921BECE19A006EC3F7 /* Aeon iOS Tests.xctest */,
 			);
@@ -467,14 +443,6 @@
 				B0A54BDF1BE6D6E100423092 /* TCPStream.swift */,
 			);
 			path = Aeon;
-			sourceTree = "<group>";
-		};
-		B0D521C01BE53AD7002063D5 /* Aeon Command Line Application */ = {
-			isa = PBXGroup;
-			children = (
-				B0D521C11BE53AD7002063D5 /* main.swift */,
-			);
-			path = "Aeon Command Line Application";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -580,23 +548,6 @@
 			productReference = B0D5217A1BE4F753002063D5 /* Aeon OSX Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		B0D521BE1BE53AD7002063D5 /* Aeon Command Line Application */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B0D521C31BE53AD7002063D5 /* Build configuration list for PBXNativeTarget "Aeon Command Line Application" */;
-			buildPhases = (
-				B0D521BB1BE53AD7002063D5 /* Sources */,
-				B0D521BC1BE53AD7002063D5 /* Frameworks */,
-				B0D521BD1BE53AD7002063D5 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Aeon Command Line Application";
-			productName = "Aeon Command Line Application";
-			productReference = B0D521BF1BE53AD7002063D5 /* Aeon Command Line Application */;
-			productType = "com.apple.product-type.tool";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -617,9 +568,6 @@
 						CreatedOnToolsVersion = 7.1;
 					};
 					B0D521791BE4F753002063D5 = {
-						CreatedOnToolsVersion = 7.1;
-					};
-					B0D521BE1BE53AD7002063D5 = {
 						CreatedOnToolsVersion = 7.1;
 					};
 				};
@@ -662,7 +610,6 @@
 				3A1C55881BECE19A006EC3F7 /* Aeon iOS */,
 				B0D521791BE4F753002063D5 /* Aeon OSX Tests */,
 				3A1C55911BECE19A006EC3F7 /* Aeon iOS Tests */,
-				B0D521BE1BE53AD7002063D5 /* Aeon Command Line Application */,
 			);
 		};
 /* End PBXProject section */
@@ -899,14 +846,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B0D521BB1BE53AD7002063D5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B0D521C21BE53AD7002063D5 /* main.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1011,6 +950,7 @@
 				PRODUCT_NAME = Aeon;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1173,6 +1113,7 @@
 				PRODUCT_NAME = Aeon;
 				SKIP_INSTALL = YES;
 				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Dependencies";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -1198,25 +1139,6 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zewo.AeonTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		B0D521C41BE53AD7002063D5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Dependencies";
-			};
-			name = Debug;
-		};
-		B0D521C51BE53AD7002063D5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/Dependencies";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
 		};
@@ -1264,15 +1186,6 @@
 			buildConfigurations = (
 				B0D521881BE4F753002063D5 /* Debug */,
 				B0D521891BE4F753002063D5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B0D521C31BE53AD7002063D5 /* Build configuration list for PBXNativeTarget "Aeon Command Line Application" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B0D521C41BE53AD7002063D5 /* Debug */,
-				B0D521C51BE53AD7002063D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

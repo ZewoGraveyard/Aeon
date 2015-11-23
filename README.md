@@ -126,50 +126,12 @@ To integrate **Aeon** into your Xcode project using Carthage, specify it in your
 github "Zewo/Aeon" == 0.2
 ```
 
-### Manually
-
-If you prefer not to use a dependency manager, you can integrate **Aeon** into your project manually.
-
-#### Embedded Framework
-
-- Open up Terminal, `cd` into your top-level project directory, and run the following command "if" your project is not initialized as a git repository:
-
-```bash
-$ git init
-```
-
-- Add **Aeon** as a git [submodule](http://git-scm.com/docs/git-submodule) by running the following command:
-
-```bash
-$ git submodule add https://github.com/Zewo/Aeon.git
-```
-
-- Open the new `Aeon` folder, and drag the `Aeon.xcodeproj` into the Project Navigator of your application's Xcode project.
-
-    > It should appear nested underneath your application's blue project icon. Whether it is above or below all the other Xcode groups does not matter.
-
-- Select the `Aeon.xcodeproj` in the Project Navigator and verify the deployment target matches that of your application target.
-- Next, select your application project in the Project Navigator (blue project icon) to navigate to the target configuration window and select the application target under the "Targets" heading in the sidebar.
-- In the tab bar at the top of that window, open the "General" panel.
-- Click on the `+` button under the "Embedded Binaries" section.
-- You will see two different `Aeon.xcodeproj` folders each with two different versions of the `Aeon.framework` nested inside a `Products` folder.
-
-    > It does not matter which `Products` folder you choose from, but it does matter whether you choose the top or bottom `Aeon.framework`.
-
-- Select the top `Aeon.framework` for OS X and the bottom one for iOS.
-
-    > You can verify which one you selected by inspecting the build log for your project. The build target for `Aeon` will be listed as either `Aeon iOS` or `Aeon OSX`.
-
-- And that's it!
-
-> The `Aeon.framework` is automagically added as a target dependency, linked framework and embedded framework in a copy files build phase which is all you need to build on the simulator and a device.
-
-###Command Line Application
+### Command Line Application
 
 To use **Aeon** in a command line application:
 
 - Install the [Swift Command Line Application](https://github.com/Zewo/Swift-Command-Line-Application-Template) Xcode template
-- Follow [Cocoa Pods](#cocoapods), [Carthage](#carthage) or [Embedded Framework](#embedded-framework) instructions.
+- Follow [Cocoa Pods](#cocoapods) or [Carthage](#carthage) instructions.
 
 License
 -------

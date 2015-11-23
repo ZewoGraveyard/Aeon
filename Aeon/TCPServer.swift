@@ -25,7 +25,7 @@
 import Kalopsia
 import Currents
 
-struct TCPServer : TCPServerType {
+struct TCPServer: TCPServerType {
     let port: Int
     let semaphore = Semaphore(resourceCount: 0)
 

@@ -25,7 +25,7 @@
 import Kalopsia
 import Currents
 
-final class TCPStream : TCPStreamType {
+final class TCPStream: TCPStreamType {
     let socket: TCPClientSocket
     let channel: IOChannel
 

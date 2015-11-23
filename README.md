@@ -92,9 +92,9 @@ To make this results have any meaning you should create, for example, a node.js 
 $ gem install cocoapods
 ```
 
-> CocoaPods 0.39.0+ is required to build Luminescence.
+> CocoaPods 0.39.0+ is required to build Aeon.
 
-To integrate Epoch into your Xcode project using CocoaPods, specify it in your `Podfile`:
+To integrate **Aeon** into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
 source 'https://github.com/CocoaPods/Specs.git'

@@ -12,7 +12,6 @@ Aeon
 ## Features
 
 - [x] No `Foundation` dependency (**Linux ready**)
-- [x] Completely Asynchronous
 
 ## Dependencies
 
@@ -22,10 +21,23 @@ Aeon
 - [Luminescence](https://github.com/Zewo/Luminescence) - HTTP parser
 - [Kalopsia](https://github.com/Zewo/Kalopsia) - GCD wrapper
 
+## Related Projects
+
+- [Spell](https://github.com/Zewo/Spell) - HTTP router
+- [Fuzz](https://github.com/Zewo/Fuzz) - HTTP middleware framework
+
 ## Usage
 
+### Solo
+
+You can use **Aeon** without any extra dependencies if you wish.
+
 ```swift
-struct HTTPServerResponder : HTTPResponderType {
+import Curvature
+import Otherside
+import Aeon
+
+struct HTTPServerResponder: HTTPResponderType {
     func respond(request: HTTPRequest) -> HTTPResponse {
     
         // do something based on the HTTPRequest
@@ -36,6 +48,37 @@ struct HTTPServerResponder : HTTPResponderType {
 
 let responder = HTTPServerResponder()
 let server = HTTPServer(port: 8080, responder: responder)
+server.start()
+```
+
+### Aeon + Spell
+
+You'll probably need an HTTP router to make thinks easier. **Aeon** and [Spell](https://www.github.com/Zewo/Spell) were designed to work with each other seamlessly.
+
+```swift
+import Curvature
+import Otherside
+import Aeon
+import Spell
+
+let router = HTTPRouter { router in
+    router.post("/users") { request in
+
+        // do something based on the HTTPRequest
+
+        return HTTPResponse(status: .Created)
+    }
+
+    router.get("/users/:id") { request in
+
+        // do something based on the HTTPRequest
+        let id = request.parameters["id"]
+
+        return HTTPResponse(status: .OK)
+    } 
+}
+
+let server = HTTPServer(port: 8080, responder: router)
 server.start()
 ```
 

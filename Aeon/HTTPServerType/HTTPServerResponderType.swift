@@ -1,4 +1,4 @@
-// HTTPResponseSerializerType.swift
+// HTTPServerResponderType.swift
 //
 // The MIT License (MIT)
 //
@@ -22,8 +22,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Curvature
+import HTTP
 
-public protocol HTTPResponseSerializerType {
-    func serializeResponse(client: TCPStreamType, response: HTTPResponse, completion: (error: ErrorType?) -> Void)
+public protocol HTTPServerResponderType {
+    func respond(request: HTTPRequest) -> HTTPResponse
 }

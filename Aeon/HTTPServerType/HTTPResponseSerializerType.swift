@@ -1,4 +1,4 @@
-// main.swift
+// HTTPResponseSerializerType.swift
 //
 // The MIT License (MIT)
 //
@@ -22,12 +22,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-struct HTTPServerResponder : HTTPResponderType {
-    func respond(request: HTTPRequest) -> HTTPResponse {
-        return HTTPResponse(statusCode: 200, reasonPhrase: "OK")
-    }
-}
+import HTTP
 
-let responder = HTTPServerResponder()
-let server = HTTPServer(port: 8080, responder: responder)
-server.start()
+public protocol HTTPResponseSerializerType {
+    func serializeResponse(client: TCPStreamType, response: HTTPResponse, completion: (error: ErrorType?) -> Void)
+}

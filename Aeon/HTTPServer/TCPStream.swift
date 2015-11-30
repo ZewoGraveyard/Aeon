@@ -22,8 +22,8 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Kalopsia
-import Currents
+import TCPIP
+import GrandCentralDispatch
 
 final class TCPStream: TCPStreamType {
     let socket: TCPClientSocket

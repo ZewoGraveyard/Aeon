@@ -22,16 +22,15 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Otherside
-import Curvature
+import HTTP
 
 public struct HTTPServer: HTTPServerType {
     public let server: TCPServerType
     public let parser: HTTPRequestParserType = HTTPParser()
-    public let responder: HTTPResponderType
+    public let responder: HTTPServerResponderType
     public let serializer: HTTPResponseSerializerType = HTTPSerializer()
 
-    struct HTTPResponder: HTTPResponderType {
+    struct HTTPResponder: HTTPServerResponderType {
         let respond: (request: HTTPRequest) -> HTTPResponse
         func respond(request: HTTPRequest) -> HTTPResponse {
             return respond(request: request)
@@ -39,11 +38,6 @@ public struct HTTPServer: HTTPServerType {
     }
 
     public init(port: Int, responder: HTTPResponderType) {
-        self.server = TCPServer(port: port)
-        self.responder = responder
-    }
-
-    public init(port: Int, responder: HTTPFallibleResponderType) {
         self.server = TCPServer(port: port)
         self.responder = HTTPResponder { request in
             do {

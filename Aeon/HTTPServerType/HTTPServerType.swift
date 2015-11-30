@@ -22,12 +22,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Otherside
+import HTTP
 
 public protocol HTTPServerType {
     var server: TCPServerType { get }
     var parser: HTTPRequestParserType { get }
-    var responder: HTTPResponderType { get }
+    var responder: HTTPServerResponderType { get }
     var serializer: HTTPResponseSerializerType  { get }
 }
 

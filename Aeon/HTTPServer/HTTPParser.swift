@@ -1,4 +1,4 @@
-// HTTPSerializer.swift
+// HTTPParser.swift
 //
 // The MIT License (MIT)
 //
@@ -22,21 +22,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import Curvature
+import HTTP
+import HTTPParser
 
-struct HTTPSerializer: HTTPResponseSerializerType {
-    func serializeResponse(client: TCPStreamType, response: HTTPResponse, completion: (error: ErrorType?) -> Void) {
-        var string = "HTTP/\(response.majorVersion).\(response.minorVersion) \(response.statusCode) \(response.reasonPhrase)\r\n"
-
-        for (name, value) in response.headers {
-            string += "\(name): \(value)\r\n"
+struct HTTPParser: HTTPRequestParserType {
+    func parseRequest(client: TCPStreamType, completion: (request: HTTPRequest?, error: ErrorType?) -> Void) {
+        let parser = HTTPRequestParser { request in
+            completion(request: request, error: nil)
         }
 
-        string += "\r\n"
-
-        var data = string.utf8.map { Int8($0) }
-        data += response.body
-
-        client.send(data, completion: completion)
+        client.receive { data, error in
+            if let error = error {
+                completion(request: nil, error: error)
+            } else {
+                do {
+                    try parser.parse(data)
+                } catch {
+                    completion(request: nil, error: error)
+                }
+            }
+        }
     }
 }

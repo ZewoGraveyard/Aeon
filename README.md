@@ -15,16 +15,18 @@ Aeon
 
 ## Dependencies
 
-**Aeon** is made of:
+**Epoch** is made of:
 
-- [Currents](https://github.com/Zewo/Currents) - TCP/IP
-- [Luminescence](https://github.com/Zewo/Luminescence) - HTTP parser
-- [Kalopsia](https://github.com/Zewo/Kalopsia) - GCD wrapper
+- [TCPIP](https://github.com/Zewo/TCPIP) - TCP/IP
+- [GrandCentralDispatch](https://github.com/Zewo/GrandCentralDispatch) - GCD wrapper
+- [URI](https://github.com/Zewo/URI) - URI
+- [HTTP](https://github.com/Zewo/HTTP) - HTTP request/response
+- [HTTPParser](https://github.com/Zewo/HTTPParser) - HTTP parser
 
 ## Related Projects
 
-- [Spell](https://github.com/Zewo/Spell) - HTTP router
-- [Fuzz](https://github.com/Zewo/Fuzz) - HTTP middleware framework
+- [HTTPRouter](https://github.com/Zewo/HTTPRouter) - HTTP router
+- [HTTPMiddleware](https://github.com/Zewo/HTTPMiddleware) - HTTP middleware framework
 
 ## Usage
 
@@ -33,8 +35,7 @@ Aeon
 You can use **Aeon** without any extra dependencies if you wish.
 
 ```swift
-import Curvature
-import Otherside
+import HTTP
 import Aeon
 
 struct HTTPServerResponder: HTTPResponderType {
@@ -51,29 +52,24 @@ let server = HTTPServer(port: 8080, responder: responder)
 server.start()
 ```
 
-### Aeon + Spell
+### Epoch + HTTPRouter
 
-You'll probably need an HTTP router to make thinks easier. **Aeon** and [Spell](https://www.github.com/Zewo/Spell) were designed to work with each other seamlessly.
+You'll probably need an HTTP router to make thinks easier. **Aeon** and [HTTPRouter](https://www.github.com/Zewo/HTTPRouter) were designed to work with each other seamlessly.
 
 ```swift
-import Curvature
-import Otherside
+import HTTP
+import HTTPRouter
 import Aeon
-import Spell
 
 let router = HTTPRouter { router in
     router.post("/users") { request in
-
         // do something based on the HTTPRequest
-
         return HTTPResponse(status: .Created)
     }
 
     router.get("/users/:id") { request in
-
-        // do something based on the HTTPRequest
         let id = request.parameters["id"]
-
+        // do something based on the HTTPRequest and id
         return HTTPResponse(status: .OK)
     } 
 }
@@ -81,49 +77,6 @@ let router = HTTPRouter { router in
 let server = HTTPServer(port: 8080, responder: router)
 server.start()
 ```
-
-## Performance
-
-Start *Aeon Command Line Application* and then run:
-
-```bash
-> ab -n 12800 -c 128 http://localhost:8080/   
-```
-
-Results in a Macbook Pro early 2013:
-
-```
-Concurrency Level:      128
-Time taken for tests:   4.223 seconds
-Complete requests:      12800
-Failed requests:        0
-Total transferred:      243200 bytes
-HTML transferred:       0 bytes
-Requests per second:    3031.00 [#/sec] (mean)
-Time per request:       42.230 [ms] (mean)
-Time per request:       0.330 [ms] (mean, across all concurrent requests)
-Transfer rate:          56.24 [Kbytes/sec] received
-
-Connection Times (ms)
-              min  mean[+/-sd] median   max
-Connect:        2   21  14.3     20     189
-Processing:     5   21  14.1     21     189
-Waiting:        3   20  14.5     20     189
-Total:         10   42  22.6     42     210
-
-Percentage of the requests served within a certain time (ms)
-  50%     42
-  66%     50
-  75%     54
-  80%     58
-  90%     61
-  95%     63
-  98%     64
-  99%    203
- 100%    210 (longest request)
-```
-
-To make this results have any meaning you should create, for example, a node.js server that responds with 200 OK and compare it with **Aeon**.
 
 ## Installation
 
@@ -140,11 +93,13 @@ $ gem install cocoapods
 To integrate **Aeon** into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
 ```ruby
+source 'https://github.com/Zewo/Specs.git'
 source 'https://github.com/CocoaPods/Specs.git'
 use_frameworks!
 
-pod 'Aeon', '0.2'
+pod 'Aeon', '0.3'
 ```
+> Don't forget  `source 'https://github.com/Zewo/Specs.git'`. This is very important. It should always come before the official CocoaPods repo.
 
 Then, run the following command:
 
@@ -166,7 +121,7 @@ $ brew install carthage
 To integrate **Aeon** into your Xcode project using Carthage, specify it in your `Cartfile`:
 
 ```ogdl
-github "Zewo/Aeon" == 0.2
+github "Zewo/Aeon" == 0.3
 ```
 
 ### Command Line Application

@@ -52,7 +52,7 @@ let server = HTTPServer(port: 8080, responder: responder)
 server.start()
 ```
 
-### Epoch + HTTPRouter
+### Aeon + HTTPRouter
 
 You'll probably need an HTTP router to make thinks easier. **Aeon** and [HTTPRouter](https://www.github.com/Zewo/HTTPRouter) were designed to work with each other seamlessly.
 

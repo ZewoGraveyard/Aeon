@@ -15,7 +15,7 @@ Aeon
 
 ## Dependencies
 
-**Epoch** is made of:
+**Aeon** is made of:
 
 - [TCPIP](https://github.com/Zewo/TCPIP) - TCP/IP
 - [GrandCentralDispatch](https://github.com/Zewo/GrandCentralDispatch) - GCD wrapper

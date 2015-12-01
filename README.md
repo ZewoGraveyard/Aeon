@@ -6,6 +6,7 @@ Aeon
 [![Cocoapods Compatible](https://img.shields.io/badge/Cocoapods-Compatible-4BC51D.svg?style=flat)](https://cocoapods.org/pods/Luminescence)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-Compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Slack Status](https://zewo-slackin.herokuapp.com/badge.svg)](https://zewo-slackin.herokuapp.com)
 
 **Aeon** is a GCD based HTTP server for **Swift 2**.
 
@@ -130,6 +131,12 @@ To use **Aeon** in a command line application:
 
 - Install the [Swift Command Line Application](https://github.com/Zewo/Swift-Command-Line-Application-Template) Xcode template
 - Follow [Cocoa Pods](#cocoapods) or [Carthage](#carthage) instructions.
+
+## Community
+
+[![Slack](http://s13.postimg.org/ybwy92ktf/Slack.png)](https://zewo-slackin.herokuapp.com)
+
+Join us on [Slack](https://zewo-slackin.herokuapp.com).
 
 License
 -------

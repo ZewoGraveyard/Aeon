@@ -34,7 +34,13 @@ public struct HTTPServer: HTTPServerType {
     public init(port: Int, responder: HTTPResponderType) {
         self.server = TCPServer(port: port)
         self.responseHandler = { request, responseHandler in
-            responseHandler(responder.respond(request))
+            let response: HTTPResponse
+            do {
+                response = try responder.respond(request)
+            } catch {
+                response = HTTPResponse(status: .InternalServerError)
+            }
+            responseHandler(response)
         }
     }
 

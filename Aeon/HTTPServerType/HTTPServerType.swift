@@ -27,8 +27,9 @@ import HTTP
 public protocol HTTPServerType {
     var server: TCPServerType { get }
     var parser: HTTPRequestParserType { get }
-    var responder: HTTPServerResponderType { get }
-    var serializer: HTTPResponseSerializerType  { get }
+    var serializer: HTTPResponseSerializerType { get }
+    var responseHandler: (HTTPRequest, (HTTPResponse -> Void)) -> Void { get }
+    var upgradeHandler: ((HTTPRequest, TCPStreamType) -> Bool)? { get set }
 }
 
 extension HTTPServerType {
@@ -42,14 +43,17 @@ extension HTTPServerType {
                         failure(error)
                         client.close()
                     } else if let request = request {
-                        let response = self.responder.respond(request)
-                        self.serializer.serializeResponse(client, response: response) { error in
-                            if let error = error {
-                                failure(error)
-                                client.close()
-                            } else {
-                                if !request.keepAlive {
-                                    client.close()
+                        if !request.upgrade || self.upgradeHandler?(request, client) != true {
+                            self.responseHandler(request) { response in
+                                self.serializer.serializeResponse(client, response: response) { error in
+                                    if let error = error {
+                                        failure(error)
+                                        client.close()
+                                    } else {
+                                        if !request.keepAlive {
+                                            client.close()
+                                        }
+                                    }
                                 }
                             }
                         }

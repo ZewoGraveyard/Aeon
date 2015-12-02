@@ -27,40 +27,49 @@ import HTTP
 public struct HTTPServer: HTTPServerType {
     public let server: TCPServerType
     public let parser: HTTPRequestParserType = HTTPParser()
-    public let responder: HTTPServerResponderType
     public let serializer: HTTPResponseSerializerType = HTTPSerializer()
-
-    struct HTTPResponder: HTTPServerResponderType {
-        let respond: (request: HTTPRequest) -> HTTPResponse
-        func respond(request: HTTPRequest) -> HTTPResponse {
-            return respond(request: request)
-        }
-    }
+    public let responseHandler: (HTTPRequest, (HTTPResponse -> Void)) -> Void
+    public var upgradeHandler: ((HTTPRequest, TCPStreamType) -> Bool)?
 
     public init(port: Int, responder: HTTPResponderType) {
         self.server = TCPServer(port: port)
-        self.responder = HTTPResponder { request in
+        self.responseHandler = { request, responseHandler in
+            let response: HTTPResponse
             do {
-                return try responder.respond(request)
+                response = try responder.respond(request)
             } catch {
-                return HTTPResponse(status: .InternalServerError)
+                response = HTTPResponse(status: .InternalServerError)
+            }
+            responseHandler(response)
+        }
+    }
+
+    public init(port: Int, responder: HTTPCallbackResponderType) {
+        self.server = TCPServer(port: port)
+        self.responseHandler = { request, responseHandler in
+            responder.respond(request) { response in
+                responseHandler(response)
             }
         }
     }
 
     public init(port: Int, respond: HTTPRequest throws -> HTTPResponse) {
         self.server = TCPServer(port: port)
-        self.responder = HTTPResponder { request in
+        self.responseHandler = { request, responseHandler in
+            let response: HTTPResponse
             do {
-                return try respond(request)
+                response = try respond(request)
             } catch {
-                return HTTPResponse(status: .InternalServerError)
+                response = HTTPResponse(status: .InternalServerError)
             }
+            responseHandler(response)
         }
     }
 
     public init(port: Int, respond: HTTPRequest -> HTTPResponse) {
         self.server = TCPServer(port: port)
-        self.responder = HTTPResponder(respond: respond)
+        self.responseHandler = { request, responseHandler in
+            responseHandler(respond(request))
+        }
     }
 }

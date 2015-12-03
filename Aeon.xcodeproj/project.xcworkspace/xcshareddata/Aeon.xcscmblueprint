@@ -10,6 +10,7 @@
     "8F96187C21DCA91FDCD88D25D8AF3DBCE89E0BCF" : 0,
     "7926375CF48B2FF472FD622211E467ACFF61BE5A" : 0,
     "57932305D7AF3390B1D4C8A3D4D1FCFFE771843F" : 0,
+    "FDC1EEAE5EDAF5D3F4A6BADD7FDD7A4BD908DED9" : 0,
     "D4199CF4A45E212E54A4CEE7E34326E0BC446862" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "27589DA4-6D84-4D61-BF7A-B9C142F226F5",
@@ -20,6 +21,7 @@
     "8F96187C21DCA91FDCD88D25D8AF3DBCE89E0BCF" : "Aeon\/",
     "7926375CF48B2FF472FD622211E467ACFF61BE5A" : "Aeon\/Carthage\/Checkouts\/Otherside\/",
     "57932305D7AF3390B1D4C8A3D4D1FCFFE771843F" : "Aeon\/Carthage\/Checkouts\/Luminescence\/",
+    "FDC1EEAE5EDAF5D3F4A6BADD7FDD7A4BD908DED9" : "Aeon\/Stream\/",
     "D4199CF4A45E212E54A4CEE7E34326E0BC446862" : "Aeon\/Carthage\/Checkouts\/Curvature\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Aeon",
@@ -60,6 +62,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Zewo\/Currents.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "ED0FE0EECA7970ABC2D434BB3DA7278322E3B02F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Zewo\/Stream.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FDC1EEAE5EDAF5D3F4A6BADD7FDD7A4BD908DED9"
     }
   ]
 }

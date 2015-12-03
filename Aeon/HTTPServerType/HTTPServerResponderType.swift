@@ -23,7 +23,7 @@
 // SOFTWARE.
 
 import HTTP
+import Stream
 
-public protocol HTTPServerResponderType {
-    func respond(request: HTTPRequest) -> HTTPResponse
-}
+
+

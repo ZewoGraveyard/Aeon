@@ -24,8 +24,9 @@
 
 import TCPIP
 import GrandCentralDispatch
+import Stream
 
-final class TCPStream: TCPStreamType {
+final class TCPStream: StreamType {
     let socket: TCPClientSocket
     let channel: IOChannel
 
@@ -42,26 +43,26 @@ final class TCPStream: TCPStreamType {
         channel.setLowWater(1)
     }
 
-    func receive(completion: (data: [Int8], error: ErrorType?) -> Void) {
+    func receive(completion: (Void throws -> [Int8]) -> Void) {
         channel.read { result in
             result.success { done, data in
-                completion(data: data, error: nil)
+                completion({ data })
             }
             result.failure { error in
-                completion(data: [], error: error)
+                completion({ throw error })
             }
         }
     }
 
-    func send(data: [Int8], completion: (error: ErrorType?) -> Void) {
+    func send(data: [Int8], completion: (Void throws -> Void) -> Void) {
         channel.write(data: data) { result in
             result.success { done, _ in
                 if done {
-                    completion(error: nil)
+                    completion({})
                 }
             }
             result.failure { error in
-                completion(error: error)
+                completion({ throw error })
             }
         }
     }

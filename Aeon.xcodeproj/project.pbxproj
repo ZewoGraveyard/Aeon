@@ -30,8 +30,6 @@
 		B0EA679B1C0BE17600515762 /* HTTPServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EA67891C0BE17600515762 /* HTTPServerType.swift */; };
 		B0EA679C1C0BE17600515762 /* TCPServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EA678A1C0BE17600515762 /* TCPServerType.swift */; };
 		B0EA679D1C0BE17600515762 /* TCPServerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EA678A1C0BE17600515762 /* TCPServerType.swift */; };
-		B0EA67E11C0BE1D700515762 /* HTTPServerResponderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EA67E01C0BE1D700515762 /* HTTPServerResponderType.swift */; };
-		B0EA67E21C0BE1D700515762 /* HTTPServerResponderType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EA67E01C0BE1D700515762 /* HTTPServerResponderType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,7 +196,6 @@
 		B0EA67A01C0BE17F00515762 /* TCPIP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = TCPIP.xcodeproj; path = TCPIP/TCPIP.xcodeproj; sourceTree = "<group>"; };
 		B0EA67AF1C0BE18400515762 /* GrandCentralDispatch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GrandCentralDispatch.xcodeproj; path = GrandCentralDispatch/GrandCentralDispatch.xcodeproj; sourceTree = "<group>"; };
 		B0EA67BE1C0BE18E00515762 /* HTTPParser.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = HTTPParser.xcodeproj; path = HTTPParser/HTTPParser.xcodeproj; sourceTree = "<group>"; };
-		B0EA67E01C0BE1D700515762 /* HTTPServerResponderType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPServerResponderType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,7 +293,6 @@
 				B0EA67891C0BE17600515762 /* HTTPServerType.swift */,
 				B0EA67871C0BE17600515762 /* HTTPRequestParserType.swift */,
 				B0EA67881C0BE17600515762 /* HTTPResponseSerializerType.swift */,
-				B0EA67E01C0BE1D700515762 /* HTTPServerResponderType.swift */,
 				B0EA678A1C0BE17600515762 /* TCPServerType.swift */,
 			);
 			path = HTTPServerType;
@@ -510,6 +506,7 @@
 		B0EA67AC1C0BE17F00515762 /* TCPIPTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
+			name = TCPIP.xctest;
 			path = TCPIPTests.xctest;
 			remoteRef = B0EA67AB1C0BE17F00515762 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -517,6 +514,7 @@
 		B0EA67AE1C0BE17F00515762 /* TCPIPTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
+			name = TCPIP.xctest;
 			path = TCPIPTests.xctest;
 			remoteRef = B0EA67AD1C0BE17F00515762 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -566,6 +564,7 @@
 		B0EA67CB1C0BE18F00515762 /* HTTPParserTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
+			name = LuminescenceTests.xctest;
 			path = HTTPParserTests.xctest;
 			remoteRef = B0EA67CA1C0BE18F00515762 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -573,6 +572,7 @@
 		B0EA67CD1C0BE18F00515762 /* HTTPParserTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
+			name = LuminescenceTests.xctest;
 			path = HTTPParserTests.xctest;
 			remoteRef = B0EA67CC1C0BE18F00515762 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -620,7 +620,6 @@
 				B0EA67991C0BE17600515762 /* HTTPResponseSerializerType.swift in Sources */,
 				B0EA678D1C0BE17600515762 /* HTTPParser.swift in Sources */,
 				B0EA678F1C0BE17600515762 /* HTTPSerializer.swift in Sources */,
-				B0EA67E21C0BE1D700515762 /* HTTPServerResponderType.swift in Sources */,
 				B0EA67911C0BE17600515762 /* HTTPServer.swift in Sources */,
 				B0EA679D1C0BE17600515762 /* TCPServerType.swift in Sources */,
 				B0EA67971C0BE17600515762 /* HTTPRequestParserType.swift in Sources */,
@@ -645,7 +644,6 @@
 				B0EA67981C0BE17600515762 /* HTTPResponseSerializerType.swift in Sources */,
 				B0EA678C1C0BE17600515762 /* HTTPParser.swift in Sources */,
 				B0EA678E1C0BE17600515762 /* HTTPSerializer.swift in Sources */,
-				B0EA67E11C0BE1D700515762 /* HTTPServerResponderType.swift in Sources */,
 				B0EA67901C0BE17600515762 /* HTTPServer.swift in Sources */,
 				B0EA679C1C0BE17600515762 /* TCPServerType.swift in Sources */,
 				B0EA67961C0BE17600515762 /* HTTPRequestParserType.swift in Sources */,

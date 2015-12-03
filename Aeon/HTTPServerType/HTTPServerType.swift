@@ -23,6 +23,7 @@
 // SOFTWARE.
 
 import HTTP
+import Stream
 
 public protocol HTTPServerType {
     var server: TCPServerType { get }
@@ -39,7 +40,7 @@ extension HTTPServerType {
                 self.parser.parseRequest(stream) { parseResult in
                     do {
                         let request = try parseResult()
-                        let context = HTTPContext(stream: stream, request: request) { response in
+                        let respond: HTTPResponse -> Void = { response in
                             self.serializer.serializeResponse(stream, response: response) { serializeResult in
                                 do {
                                     try serializeResult()
@@ -52,6 +53,19 @@ extension HTTPServerType {
                                 }
                             }
                         }
+                        let upgrade: (HTTPResponse, (Void throws -> StreamType) -> Void) -> Void = { response, completion in
+                            self.serializer.serializeResponse(stream, response: response) { serializeResult in
+                                do {
+                                    try serializeResult()
+                                    completion({ stream })
+                                } catch {
+                                    completion({ throw error })
+                                    failure(error)
+                                    stream.close()
+                                }
+                            }
+                        }
+                        let context = HTTPContext(request: request, respond: respond, upgrade: upgrade)
                         self.responder.respond(context)
                     } catch {
                         failure(error)

@@ -28,8 +28,8 @@ import Stream
 
 final class TCPStream: StreamType {
     let socket: TCPClientSocket
-    let channel: IOChannel
-    var receive: ((Void throws -> [Int8]) -> Void)?
+    var channel: IOChannel!
+    var piped: Bool = false
 
     init(socket: TCPClientSocket) {
         self.socket = socket
@@ -38,23 +38,23 @@ final class TCPStream: StreamType {
             result.failure { error in
                 print(error)
             }
-            socket.close()
+            if !self.piped {
+                socket.close()
+            }
         }
 
         channel.setLowWater(1)
-
-        channel.read { result in
-            result.success { done, data in
-                self.receive?({ data })
-            }
-            result.failure { error in
-                self.receive?({ throw error })
-            }
-        }
     }
 
-    func receive(receive: (Void throws -> [Int8]) -> Void) {
-        self.receive = receive
+    func receive(completion: (Void throws -> [Int8]) -> Void) {
+        channel.read { result in
+            result.success { done, data in
+                completion({ data })
+            }
+            result.failure { error in
+                completion({ throw error })
+            }
+        }
     }
 
     func send(data: [Int8], completion: (Void throws -> Void) -> Void) {
@@ -72,5 +72,11 @@ final class TCPStream: StreamType {
 
     func close() {
         channel.close()
+    }
+    
+    func pipe() -> StreamType {
+        piped = true
+        channel.close()
+        return TCPStream(socket: socket)
     }
 }

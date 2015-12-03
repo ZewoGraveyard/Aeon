@@ -57,7 +57,7 @@ extension HTTPServerType {
                             self.serializer.serializeResponse(stream, response: response) { serializeResult in
                                 do {
                                     try serializeResult()
-                                    completion({ stream })
+                                    completion({ stream.pipe() })
                                 } catch {
                                     completion({ throw error })
                                     failure(error)

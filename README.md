@@ -26,8 +26,8 @@ Aeon
 
 ## Related Projects
 
-- [HTTPRouter](https://github.com/Zewo/HTTPRouter) - HTTP router
-- [HTTPMiddleware](https://github.com/Zewo/HTTPMiddleware) - HTTP middleware framework
+- [HTTPRouter](https://github.com/Zewo/Router) - HTTP router
+- [HTTPMiddleware](https://github.com/Zewo/Middleware) - HTTP middleware framework
 
 ## Usage
 
@@ -55,7 +55,7 @@ server.start()
 
 ### Aeon + HTTPRouter
 
-You'll probably need an HTTP router to make thinks easier. **Aeon** and [HTTPRouter](https://www.github.com/Zewo/HTTPRouter) were designed to work with each other seamlessly.
+You'll probably need an HTTP router to make thinks easier. **Aeon** and [HTTPRouter](https://github.com/Zewo/Router) were designed to work with each other seamlessly.
 
 ```swift
 import HTTP
@@ -83,7 +83,7 @@ server.start()
 
 ### CocoaPods
 
-[CocoaPods](http://cocoapods.org) is a dependency manager for Cocoa projects. You can install it with the following command:
+[CocoaPods](https://cocoapods.org/) is a dependency manager for Cocoa projects. You can install it with the following command:
 
 ```bash
 $ gem install cocoapods
